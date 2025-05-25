@@ -20,21 +20,39 @@
     <a href="#form" class="scroll-link">Подтвердить участие</a>
   </section>
 
-  <section id="form" class="form-section">
-    <h2>Подтвердите участие</h2>
-    <form id="rsvp-form">
-      <label>Имя:<br><input type="text" name="name" required></label><br>
-      <label>Фамилия:<br><input type="text" name="surname" required></label><br>
-      <label>Телефон:<br><input type="tel" name="phone" required></label><br>
-      <label>Пожелания по напиткам (через запятую):<br>
-        <input type="text" name="drinks"></label><br>
-      <label>Дополнительно (если с вами будет +1, укажите имя, фамилию и его/ее пожелания по напиткам):<br>
-        <textarea name="plus_one" rows="4"></textarea></label><br>
-      <button type="submit">Отправить</button>
-    </form>
-    <p id="response"></p>
-  </section>
+<section class="form-section" id="formSection">
+      <form id="inviteForm">
+        <h2>Регистрация гостей</h2>
+        <fieldset>
+          <legend>Гость 1</legend>
+          <input type="text" name="firstName1" placeholder="Имя" required />
+          <input type="text" name="lastName1" placeholder="Фамилия" required />
+          <input type="tel" name="phone1" placeholder="Телефон" required />
+          <input type="text" name="drinks1" placeholder="Пожелания по напиткам (через запятую)" />
+        </fieldset>
 
-  <script src="script.js"></script>
+        <label>
+          <input type="checkbox" id="addGuestCheckbox" />
+          +1 гость
+        </label>
+
+        <div id="guest2Fields" style="display:none; margin-top: 10px;">
+          <fieldset>
+            <legend>Гость 2</legend>
+            <input type="text" name="firstName2" placeholder="Имя" />
+            <input type="text" name="lastName2" placeholder="Фамилия" />
+            <input type="text" name="drinks2" placeholder="Пожелания по напиткам (через запятую)" />
+          </fieldset>
+        </div>
+
+        <p>Всего гостей: <span id="guestCount">1</span></p>
+
+        <button type="submit">Отправить</button>
+        <p id="response"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
