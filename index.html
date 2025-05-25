@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Свадебное приглашение</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="hero">
+    <img src="us.jpg" alt="Жених и невеста" class="couple-photo">
+    <h1>Вы приглашены на нашу свадьбу!</h1>
+    <p>Дорогие друзья! С радостью приглашаем вас отпраздновать с нами важный день — нашу свадьбу!</p>
+    <p><strong>Дата:</strong> 5 июля 2025 года</p>
+    <p><strong>Время регистрации:</strong> 12:00</p>
+    <p><strong>Место:</strong> ЗАГС, г. Хабаровск, ул. Волочаевская</p>
+    <p>На регистрации будет работать фотограф — не опаздывайте!</p>
+    <p><strong>Продолжение праздника:</strong> ждём вас с 18:00 по адресу ул. Свирская, 34.</p>
+    <p>Будем рады, если вы приедете пораньше и поможете нам с подготовкой!</p>
+    <a href="#form" class="scroll-link">Подтвердить участие</a>
+  </section>
+
+  <section id="form" class="form-section">
+    <h2>Подтвердите участие</h2>
+    <form id="rsvp-form">
+      <label>Имя:<br><input type="text" name="name" required></label><br>
+      <label>Фамилия:<br><input type="text" name="surname" required></label><br>
+      <label>Телефон:<br><input type="tel" name="phone" required></label><br>
+      <label>Пожелания по напиткам (через запятую):<br>
+        <input type="text" name="drinks"></label><br>
+      <label>Дополнительно (если с вами будет +1, укажите имя, фамилию и его/ее пожелания по напиткам):<br>
+        <textarea name="plus_one" rows="4"></textarea></label><br>
+      <button type="submit">Отправить</button>
+    </form>
+    <p id="response"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
