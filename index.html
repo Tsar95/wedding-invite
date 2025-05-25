@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Свадебное приглашение</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Приглашение на свадьбу</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main>
+    <section class="invitation">
+      <h1>Приглашение на свадьбу</h1>
+      <p>Свадьба состоится 5 июля 2025 года.</p>
+      <p>Регистрация в 12:00 по адресу: Хабаровск, Волочаевская.</p>
+      <p>На регистрации будет фотограф.</p>
+      <p>В 18:00 ждём вас на доме по адресу Свирская 34. Можно подъезжать раньше для помощи и подготовки.</p>
+      <img src="your-photo.jpg" alt="Мы с женихом и невестой" class="couple-photo" />
+    </section>
 
-  <section class="hero">
-    <img src="us.jpg" alt="Жених и невеста" class="couple-photo">
-    <h1>Вы приглашены на нашу свадьбу!</h1>
-    <p>Дорогие друзья! С радостью приглашаем вас отпраздновать с нами важный день — нашу свадьбу!</p>
-    <p><strong>Дата:</strong> 5 июля 2025 года</p>
-    <p><strong>Время регистрации:</strong> 12:00</p>
-    <p><strong>Место:</strong> ЗАГС, г. Хабаровск, ул. Дзержинского 46, корпус А </p>
-    <p>На регистрации будет работать фотограф — не опаздывайте!</p>
-    <p><strong>Продолжение праздника:</strong> ждём вас с 18:00 по адресу ул. Свирская, 34.</p>
-    <a href="#form" class="scroll-link">Подтвердить участие</a>
-  </section>
-
-<section class="form-section" id="formSection">
-      <form id="inviteForm">
+    <section class="form-section">
+      <form id="rsvp-form">
         <h2>Регистрация гостей</h2>
-        <fieldset>
-          <legend>Гость 1</legend>
-          <input type="text" name="firstName1" placeholder="Имя" required />
-          <input type="text" name="lastName1" placeholder="Фамилия" required />
-          <input type="tel" name="phone1" placeholder="Телефон" required />
-          <input type="text" name="drinks1" placeholder="Пожелания по напиткам (через запятую)" />
-        </fieldset>
+        <p>Всего гостей: <span id="guest-count">1</span></p>
+
+        <label>Имя:
+          <input type="text" name="name" required />
+        </label>
+        <label>Фамилия:
+          <input type="text" name="surname" required />
+        </label>
+        <label>Телефон:
+          <input type="tel" name="phone" required />
+        </label>
+        <label>Пожелания по напиткам (через запятую):
+          <input type="text" name="drinks" />
+        </label>
 
         <label>
-          <input type="checkbox" id="addGuestCheckbox" />
+          <input type="checkbox" id="plus-one-checkbox" />
           +1 гость
         </label>
 
-        <div id="guest2Fields" style="display:none; margin-top: 10px;">
-          <fieldset>
-            <legend>Гость 2</legend>
-            <input type="text" name="firstName2" placeholder="Имя" />
-            <input type="text" name="lastName2" placeholder="Фамилия" />
-            <input type="text" name="drinks2" placeholder="Пожелания по напиткам (через запятую)" />
-          </fieldset>
+        <div id="plus-one-fields" style="display:none; margin-left: 20px;">
+          <label>Имя:
+            <input type="text" name="plus_one_name" />
+          </label>
+          <label>Фамилия:
+            <input type="text" name="plus_one_surname" />
+          </label>
+          <label>Пожелания по напиткам (через запятую):
+            <input type="text" name="plus_one_drinks" />
+          </label>
         </div>
-
-        <p>Всего гостей: <span id="guestCount">1</span></p>
 
         <button type="submit">Отправить</button>
         <p id="response"></p>
