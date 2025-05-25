@@ -12,8 +12,8 @@ document.getElementById("rsvp-form").addEventListener("submit", function(e) {
 Дополнительно: ${data.get('plus_one')}
   `;
 
-  const botToken = 'ВАШ_BOT_TOKEN';
-  const chatId = 'ВАШ_CHAT_ID';
+  const botToken = '7648969221:AAEK_zQwoXtyleuN-V8DuABHiWjS_nrLGT0';
+  const chatId = '7648969221';
 
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: 'POST',
