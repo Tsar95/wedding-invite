@@ -13,7 +13,7 @@ document.getElementById("rsvp-form").addEventListener("submit", function(e) {
   `;
 
   const botToken = '7648969221:AAEK_zQwoXtyleuN-V8DuABHiWjS_nrLGT0';
-  const chatId = '776818346';
+  const chatId = '-4608590602';
 
   fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: 'POST',
