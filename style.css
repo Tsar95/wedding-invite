@@ -126,3 +126,17 @@ button:hover {
   font-weight: bold;
   color: #9a1750;
 }
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: url('accessories-bottom.png') repeat-x bottom;
+  background-size: contain;
+  z-index: -1;
+  opacity: 0.15;
+}
+
