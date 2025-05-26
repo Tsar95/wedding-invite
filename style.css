@@ -1,36 +1,51 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
-  background: #fafafa;
+  padding: 0;
+  background: #fff0f5; /* общий фон страницы — нежно-розовый */
   color: #333;
+}
+
+header.invitation {
+  background-color: #ffe6ee;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 2px solid #ffb6c1;
+}
+
+header.invitation h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #b3003b;
+}
+
+header.invitation p {
+  margin: 5px 0;
+  font-size: 1.1em;
+}
+
+.invitation img.couple-photo {
+  max-width: 240px;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 main {
   max-width: 600px;
   margin: 0 auto;
-}
-
-.invitation {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.invitation img.couple-photo {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-form {
-  background: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-label {
+section.form-section {
+  background-color: #fff7fa;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+}
+
+form label {
   display: block;
   margin-bottom: 15px;
   font-weight: bold;
@@ -43,22 +58,23 @@ input[type="tel"] {
   margin-top: 6px;
   margin-bottom: 6px;
   box-sizing: border-box;
-  border: 1px solid #bbb;
-  border-radius: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #d94d7f;
   color: white;
   border: none;
   padding: 12px 25px;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #b3003b;
 }
 
 #response {
