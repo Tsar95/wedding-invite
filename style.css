@@ -1,84 +1,116 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff0f5; /* общий фон страницы — нежно-розовый */
-  color: #333;
+  background: #fff0f5; /* лёгкий розовый фон */
+  color: #4a2c2a;
 }
 
 header.invitation {
-  background-color: #ffe6ee;
-  padding: 30px 20px;
+  background: linear-gradient(135deg, #fce4ec, #ede7f6); /* градиент: пудровый → сиреневый */
+  padding: 40px 20px;
   text-align: center;
-  border-bottom: 2px solid #ffb6c1;
+  border-bottom: 2px solid #e0b1cb;
 }
 
 header.invitation h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 10px;
   color: #b3003b;
+  font-weight: 600;
 }
 
 header.invitation p {
-  margin: 5px 0;
   font-size: 1.1em;
+  margin: 6px 0;
 }
 
 .invitation img.couple-photo {
-  max-width: 240px;
-  height: auto;
-  margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 260px;
+  margin-top: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 18px rgba(200, 100, 150, 0.25);
 }
 
 main {
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 25px;
 }
 
 section.form-section {
-  background-color: #fff7fa;
-  padding: 25px 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+  background-color: #fff9fb;
+  padding: 30px 35px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 192, 203, 0.35);
+  border: 1px solid #f8cddf;
+}
+
+form h2 {
+  text-align: center;
+  color: #8b004f;
+  margin-bottom: 25px;
 }
 
 form label {
   display: block;
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: 500;
+  color: #5e2b2b;
 }
 
 input[type="text"],
 input[type="tel"] {
   width: 100%;
-  padding: 8px;
-  margin-top: 6px;
-  margin-bottom: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #e8bcd6;
+  background: #fffafc;
+  font-size: 1em;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  border-color: #d48ab5;
+  outline: none;
 }
 
 button {
-  background-color: #d94d7f;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #d48ab5;
   color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 12px;
   border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #b3003b;
+  background-color: #a14c87;
 }
 
 #response {
-  margin-top: 15px;
+  margin-top: 18px;
+  text-align: center;
   font-weight: bold;
-  color: green;
+  color: #00804d;
+  background-color: #e0f2f1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#guest-count {
+  font-weight: bold;
+  color: #9a1750;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
 }
