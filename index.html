@@ -3,26 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Приглашение на свадьбу</title>
+  <title>Свадьба Татьяны и Афанасия</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="invitation">
-    <h1>Приглашение на свадьбу</h1>
-    <p>Свадьба состоится <strong>5 июля 2025 года</strong>.</p>
-    <p><strong>Регистрация:</strong> 12:00, ЗАГС, Хабаровск, ул. Дзержинского 46, корпус А</p>
-    <p>На регистрации будет фотограф.</p>
-    <p><strong>Вечером:</strong> 18:00, сбор гостей на доме — ул. Свирская, 34</p>
-    <p>Можно подъезжать пораньше, чтобы помочь с подготовкой</p>
-    <img src="us.jpg" alt="Мы с женихом и невестой" class="couple-photo" />
+    <h1>Дорогие друзья и уважаемые родственники!</h1>
+    <p>
+      С большой радостью и трепетом в сердце<br />
+      мы, <strong>Татьяна и Афанасий</strong>, приглашаем вас
+      разделить с нами особенный день — день нашей свадьбы.
+    </p>
+    <p>
+      Торжественная регистрация брака состоится<br />
+      <strong>5 июля 2025 года в 12:00</strong><br />
+      по адресу: г. Хабаровск, ул. Волочаевская.
+    </p>
+    <p>
+      После церемонии будем рады видеть вас<br />
+      на праздничном вечере по адресу: ул. Свирская, 34<br />
+      <em>Сбор гостей — с 18:00</em><br />
+      Будем благодарны, если вы сможете приехать немного заранее
+      и поддержать нас в подготовке.
+    </p>
+    <p>На регистрации будет профессиональный фотограф.</p>
+    <img src="us.jpg" alt="Татьяна и Афанасий" class="couple-photo" />
   </header>
 
   <main>
     <section class="form-section">
       <form id="rsvp-form">
-        <h2>Регистрация гостей</h2>
-        <p>Всего гостей: <span id="guest-count">1</span></p>
+        <h2>Подтвердите ваше присутствие</h2>
+        <p>Количество гостей: <span id="guest-count">1</span></p>
 
         <label>Имя:
           <input type="text" name="name" required />
@@ -37,19 +50,19 @@
           <input type="text" name="drinks" />
         </label>
 
-        <label>
+        <label class="plus-one-label">
           <input type="checkbox" id="plus-one-checkbox" />
-          +1 гость
+          Со мной будет +1 гость
         </label>
 
-        <div id="plus-one-fields" style="display:none; margin-left: 20px;">
-          <label>Имя:
+        <div id="plus-one-fields" style="display:none;">
+          <label>Имя гостя:
             <input type="text" name="plus_one_name" />
           </label>
-          <label>Фамилия:
+          <label>Фамилия гостя:
             <input type="text" name="plus_one_surname" />
           </label>
-          <label>Пожелания по напиткам (через запятую):
+          <label>Пожелания по напиткам:
             <input type="text" name="plus_one_drinks" />
           </label>
         </div>
