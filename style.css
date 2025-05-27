@@ -2,21 +2,21 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fffafc;
-  color: #4a2c2a;
+  background: #f9f6f1; /* молочный фон */
+  color: #2b2b2b;
 }
 
 header.invitation {
-  background: linear-gradient(135deg, #fce4ec, #ede7f6);
+  background: linear-gradient(135deg, #f9f6f1, #eae7dd);
   padding: 50px 30px;
   text-align: center;
-  border-bottom: 2px solid #e0b1cb;
+  border-bottom: 2px solid #c8a96b; /* золотой бордюр */
 }
 
 header.invitation h1 {
   font-size: 2.2em;
   margin-bottom: 15px;
-  color: #8b004f;
+  color: #2e4634; /* тёмно-зелёный */
   font-weight: 700;
 }
 
@@ -28,14 +28,14 @@ header.invitation p {
 
 header.invitation em {
   font-style: italic;
-  color: #7c2f45;
+  color: #3c5a49;
 }
 
 header.invitation img.couple-photo {
   max-width: 260px;
   border-radius: 15px;
   margin-top: 25px;
-  box-shadow: 0 0 15px rgba(200, 100, 150, 0.25);
+  box-shadow: 0 0 15px rgba(46, 70, 52, 0.25);
 }
 
 main {
@@ -45,16 +45,16 @@ main {
 }
 
 section.form-section {
-  background-color: #fff7fa;
+  background-color: #ffffff;
   padding: 30px 35px;
   border-radius: 18px;
-  box-shadow: 0 0 20px rgba(255, 192, 203, 0.35);
-  border: 1px solid #f8cddf;
+  box-shadow: 0 0 20px rgba(46, 70, 52, 0.1);
+  border: 1px solid #c8a96b;
 }
 
 form h2 {
   text-align: center;
-  color: #8b004f;
+  color: #2e4634;
   margin-bottom: 25px;
 }
 
@@ -62,7 +62,7 @@ form label {
   display: block;
   margin-bottom: 15px;
   font-weight: 500;
-  color: #5e2b2b;
+  color: #2b2b2b;
 }
 
 input[type="text"],
@@ -70,15 +70,15 @@ input[type="tel"] {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
-  border: 1.5px solid #e8bcd6;
-  background: #fff;
+  border: 1.5px solid #c8a96b;
+  background: #fefefe;
   font-size: 1em;
   box-sizing: border-box;
 }
 
 input[type="text"]:focus,
 input[type="tel"]:focus {
-  border-color: #d48ab5;
+  border-color: #2e4634;
   outline: none;
 }
 
@@ -97,7 +97,7 @@ button {
   display: block;
   width: 100%;
   margin-top: 20px;
-  background-color: #d48ab5;
+  background-color: #2e4634;
   color: white;
   font-size: 1.1em;
   font-weight: bold;
@@ -109,22 +109,22 @@ button {
 }
 
 button:hover {
-  background-color: #a14c87;
+  background-color: #243b2a;
 }
 
 #response {
   margin-top: 18px;
   text-align: center;
   font-weight: bold;
-  color: #00804d;
-  background-color: #e0f2f1;
+  color: #2e4634;
+  background-color: #e8f0ea;
   padding: 10px;
   border-radius: 8px;
 }
 
 #guest-count {
   font-weight: bold;
-  color: #9a1750;
+  color: #2e4634;
 }
 
 body::after {
@@ -137,14 +137,14 @@ body::after {
   background: url('accessories-bottom.png') no-repeat bottom center;
   background-size: auto;
   z-index: -1;
-  opacity: 0.15;
+  opacity: 0.12;
   pointer-events: none;
 }
 
 /* Кнопка "Проезд" */
 .modal-btn {
   padding: 10px 20px;
-  background-color: #d48ab5;
+  background-color: #2e4634;
   color: white;
   border: none;
   border-radius: 8px;
@@ -154,7 +154,7 @@ body::after {
 }
 
 .modal-btn:hover {
-  background-color: #a14c87;
+  background-color: #243b2a;
 }
 
 /* Модальное окно */
@@ -172,10 +172,10 @@ body::after {
 }
 
 .modal-content {
-  background-color: #fff9fb;
+  background-color: #fffdfb;
   margin: auto;
   padding: 20px;
-  border: 2px solid #f8cddf;
+  border: 2px solid #c8a96b;
   width: 90%;
   max-width: 600px;
   border-radius: 15px;
@@ -189,7 +189,7 @@ body::after {
 }
 
 .close {
-  color: #b3003b;
+  color: #2e4634;
   float: right;
   font-size: 28px;
   font-weight: bold;
