@@ -58,3 +58,22 @@ document.getElementById("plus-one-checkbox").addEventListener("change", function
     guestCount.innerText = '1';
   }
 });
+
+// Модалка "Проезд"
+const modal = document.getElementById("modal");
+const openBtn = document.getElementById("open-map");
+const closeBtn = document.getElementById("close-modal");
+
+openBtn.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
