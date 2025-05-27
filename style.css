@@ -140,3 +140,57 @@ body::after {
   opacity: 0.15;
 }
 
+/* Кнопка "Проезд" */
+.modal-btn {
+  padding: 10px 20px;
+  background-color: #d48ab5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-btn:hover {
+  background-color: #a14c87;
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff9fb;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #f8cddf;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.close {
+  color: #b3003b;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
