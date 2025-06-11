@@ -45,6 +45,14 @@ body {
   animation: float 8s ease-in-out infinite;
 }
 
+.ring {
+  bottom: 15%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 C55,10 65,10 70,20 C75,30 65,40 50,50 C35,40 25,30 30,20 C35,10 45,10 50,20 Z" fill="%231a3a3a"/></svg>');
+  animation: float 6s ease-in-out infinite reverse;
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
