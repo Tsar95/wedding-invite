@@ -1,88 +1,110 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Свадьба Татьяны и Афанасия</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Афанасий и Татьяна | Свадьба 05.07.25</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <header class="invitation">
-    <h1>Дорогие друзья!</h1>
-    <p>
-      С большой радостью и трепетом в сердце<br />
-      мы, <strong>Афанасий и Татьяна</strong>, приглашаем вас
-      разделить с нами особенный день — день нашей свадьбы.
-    </p>
-    <p>
-      Торжественная регистрация брака состоится:<br />
-      <strong>5 июля 2025 года в 12:00</strong><br />
-      по адресу: г. Хабаровск, ул. Дзержинского 46А.
-    </p>
-    <p>После регистрации в 13:00, по желанию, в локации Парус состоиться фотосъемка.</p>
-    <p>
-      После церемонии будем рады видеть вас<br />
-      на праздничном вечере по адресу: ул. Свирская, 34<br />
-      <p><em>Сбор гостей — в 17:00</em><br />
-  <button id="open-map" class="modal-btn">Посмотреть схему проезда</button>
-</p>
-
-<!-- Модальное окно -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span id="close-modal" class="close">&times;</span>
-    <img src="proezd.png" alt="Схема проезда" />
+  <div class="background-elements">
+    <div class="flower"></div>
+    <div class="ring"></div>
   </div>
-</div>
-    <br />
-      
-    </p>
 
-    <img src="us.jpg" alt="Татьяна и Афанасий" class="couple-photo" />
+  <header class="header">
+    <div class="header-content">
+      <h1>Афанасий <span>&</span> Татьяна</h1>
+      <p class="date">05.07.25</p>
+    </div>
   </header>
 
   <main>
-    <section class="form-section">
-      <form id="rsvp-form">
-        <h2>Подтвердите ваше присутствие</h2>
-        <p>Количество гостей: <span id="guest-count">1</span></p>
+    <section class="invitation-section">
+      <div class="container">
+        <h2>Дорогие друзья и родные</h2>
+        <p>Мы с радостью приглашаем вас разделить с нами самый важный и счастливый день в нашей жизни - день нашей свадьбы! Ваше присутствие сделает этот праздник по-настоящему особенным.</p>
+      </div>
+    </section>
 
-        <label>Имя:
-          <input type="text" name="name" required />
-        </label>
-        <label>Фамилия:
-          <input type="text" name="surname" required />
-        </label>
-        <label>Телефон:
-          <input type="tel" name="phone" required />
-        </label>
-        <label>Пожелания по напиткам (через запятую):
-          <input type="text" name="drinks" />
-        </label>
-
-        <label class="plus-one-label">
-          <input type="checkbox" id="plus-one-checkbox" />
-          Со мной будет +1
-        </label>
-
-        <div id="plus-one-fields" style="display:none;">
-          <label>Имя:
-            <input type="text" name="plus_one_name" />
-          </label>
-          <label>Фамилия:
-            <input type="text" name="plus_one_surname" />
-          </label>
-          <label>Пожелания по напиткам:
-            <input type="text" name="plus_one_drinks" />
-          </label>
+    <section class="details-section">
+      <div class="container">
+        <div class="detail-card">
+          <h3>Церемония бракосочетания</h3>
+          <p><strong>Дата:</strong> 5 июля 2025 года</p>
+          <p><strong>Время:</strong> 12:00</p>
+          <p><strong>ЗАГС:</strong> г. Хабаровск, ул. Дзержинского, 46а</p>
         </div>
 
-        <button type="submit">Отправить</button>
-        <p id="response"></p>
-      </form>
+        <div class="detail-card">
+          <h3>Праздничный ужин</h3>
+          <p><strong>Время:</strong> 17:00</p>
+          <p><strong>Место:</strong> ул. Свирская, 34</p>
+          <button class="map-btn" id="mapBtn">Схема проезда</button>
+        </div>
+
+        <div class="detail-card">
+          <h3>Фотосессия</h3>
+          <p>На церемонии будет присутствовать фотограф. Для желающих сделать дополнительные фото - сбор после регистрации у гостиницы "Парус".</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-section">
+      <div class="container">
+        <img src="couple.jpg" alt="Татьяна и Афанасий" class="couple-photo">
+      </div>
+    </section>
+
+    <section class="rsvp-section">
+      <div class="container">
+        <h2>Подтвердите ваше присутствие</h2>
+        <form id="rsvpForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required placeholder="Ваше имя">
+          </div>
+          <div class="form-group">
+            <input type="text" id="surname" name="surname" required placeholder="Ваша фамилия">
+          </div>
+          <div class="form-group">
+	<input type="tel" id="phone" name="phone" required
+       pattern="^(\+7|7|8)[\d\s\-]{9,14}$"
+       placeholder="+7 999 000 00 00">
+          </div>
+          <div class="form-group">
+            <input type="text" id="drinks" name="drinks" placeholder="Предпочтения по напиткам">
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="plusOne" name="plusOne">
+            <label for="plusOne">Я буду +1</label>
+          </div>
+          <div class="additional-fields" id="additionalFields">
+            <div class="form-group">
+              <input type="text" id="guestName" name="guestName" placeholder="Имя">
+            </div>
+            <div class="form-group">
+              <input type="text" id="guestSurname" name="guestSurname" placeholder="Фамилия">
+            </div>
+            <div class="form-group">
+              <input type="text" id="guestDrinks" name="guestDrinks" placeholder="Предпочтения по напиткам">
+            </div>
+          </div>
+          <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+        <div id="thankYouMessage" class="thank-you-message">
+          Спасибо, мы получили вашу анкету!
+        </div>
+      </div>
     </section>
   </main>
+
+  <div class="modal" id="mapModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img src="proezd.png" alt="Схема проезда">
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

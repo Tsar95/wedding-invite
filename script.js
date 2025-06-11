@@ -1,79 +1,112 @@
-document.getElementById("rsvp-form").addEventListener("submit", function(e) {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+  // Анимация появления секций
+  const sections = document.querySelectorAll('section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
 
-  const form = e.target;
-  const data = new FormData(form);
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 
-  const plusOneChecked = document.getElementById("plus-one-checkbox").checked;
-  const guestsCount = plusOneChecked ? 2 : 1;
+  // Обработка формы
+  const rsvpForm = document.getElementById('rsvpForm');
+  const plusOneCheckbox = document.getElementById('plusOne');
+  const additionalFields = document.getElementById('additionalFields');
+  const thankYouMessage = document.getElementById('thankYouMessage');
 
-  let message = `Новая заявка на свадьбу:\nКоличество гостей: ${guestsCount}\n\n`;
-
-  message += `Гость 1:\n`;
-  message += `Имя: ${data.get('name')}\n`;
-  message += `Фамилия: ${data.get('surname')}\n`;
-  message += `Телефон: ${data.get('phone')}\n`;
-  message += `Пожелания по напиткам: ${data.get('drinks') || 'Нет'}\n\n`;
-
-  if (plusOneChecked) {
-    message += `Гость 2:\n`;
-    message += `Имя: ${data.get('plus_one_name') || 'Не указано'}\n`;
-    message += `Фамилия: ${data.get('plus_one_surname') || 'Не указано'}\n`;
-    message += `Пожелания по напиткам: ${data.get('plus_one_drinks') || 'Нет'}\n\n`;
-  }
-
-  const botToken = '7648969221:AAEK_zQwoXtyleuN-V8DuABHiWjS_nrLGT0'; // вставь свой токен
-  const chatId = '-4608590602'; // вставь свой chat_id
-
-  fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message
-    })
-  }).then(response => {
-    if (response.ok) {
-      document.getElementById("response").innerText = "Спасибо! Мы получили вашу анкету.";
-      form.reset();
-      document.getElementById("plus-one-fields").style.display = "none";
-      document.getElementById("guest-count").innerText = '1';
+  // Показать/скрыть дополнительные поля для +1 гостя
+  plusOneCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+      additionalFields.classList.add('visible');
     } else {
-      document.getElementById("response").innerText = "Ошибка отправки. Попробуйте позже.";
+      additionalFields.classList.remove('visible');
     }
   });
-});
 
-document.getElementById("plus-one-checkbox").addEventListener("change", function() {
-  const plusOneFields = document.getElementById("plus-one-fields");
-  const guestCount = document.getElementById("guest-count");
+  // Отправка формы в Telegram
+  rsvpForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(rsvpForm);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Формируем сообщение для Telegram
+    let message = `🎉 Новое подтверждение на свадьбу!\n\n`;
+    message += `👤 Гость: ${data.name} ${data.surname}\n`;
+    message += `📞 Телефон: ${data.phone}\n`;
+    message += `🍷 Напитки: ${data.drinks || 'не указано'}\n`;
+    
+    if (data.plusOne === 'on') {
+      message += `\n➕ +1 гость:\n`;
+      message += `👤 Имя: ${data.guestName || 'не указано'}\n`;
+      message += `👤 Фамилия: ${data.guestSurname || 'не указано'}\n`;
+      message += `🍷 Напитки: ${data.guestDrinks || 'не указано'}\n`;
+    }
+    
+    try {
+      // Замените на ваш токен бота и ID чата
+      const botToken = '7648969221:AAFlDnf27NnohHwbY3WHUvNI_aMEz3p4g7Q';
+      const chatId = '-4608590602';
+      
+      const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'Markdown'
+        })
+      });
+      
+      if (response.ok) {
+        rsvpForm.style.display = 'none';
+        thankYouMessage.style.display = 'block';
+        
+        // Прокрутка к сообщению "Спасибо"
+        thankYouMessage.scrollIntoView({ behavior: 'smooth' });
+        
+        // Очистка формы
+        rsvpForm.reset();
+        additionalFields.classList.remove('visible');
+      } else {
+        throw new Error('Ошибка отправки сообщения');
+      }
+    } catch (error) {
+      alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
+      console.error('Ошибка:', error);
+    }
+  });
 
-  if (this.checked) {
-    plusOneFields.style.display = "block";
-    plusOneFields.querySelectorAll("input").forEach(input => input.required = true);
-    guestCount.innerText = '2';
-  } else {
-    plusOneFields.style.display = "none";
-    plusOneFields.querySelectorAll("input").forEach(input => input.required = false);
-    guestCount.innerText = '1';
-  }
-});
+  // Модальное окно с картой
+  const mapBtn = document.getElementById('mapBtn');
+  const mapModal = document.getElementById('mapModal');
+  const closeBtn = document.querySelector('.close-btn');
 
-// Модалка "Проезд"
-const modal = document.getElementById("modal");
-const openBtn = document.getElementById("open-map");
-const closeBtn = document.getElementById("close-modal");
+  mapBtn.addEventListener('click', function() {
+    mapModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
 
-openBtn.addEventListener("click", () => {
-  modal.style.display = "block";
-});
+  closeBtn.addEventListener('click', function() {
+    mapModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
 
-closeBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
+  // Закрытие модального окна при клике вне его
+  window.addEventListener('click', function(e) {
+    if (e.target === mapModal) {
+      mapModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
 });
